@@ -2,6 +2,11 @@
 
 This repository contains instructions and scripts for setting up and running Llama 3 and Gemma 2B models using Ollama on a Windows machine.
 
+# Demo Video
+```sh
+https://www.loom.com/share/1c1a86f90c3a46c8a3ac670ac1527e29
+```
+
 ## Prerequisites
 
 - [Ollama](https://ollama.com) installed on your Windows machine.
