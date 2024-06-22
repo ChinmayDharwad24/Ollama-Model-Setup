@@ -1,0 +1,20 @@
+{
+  "generate": {
+    "url": "http://localhost:11434/api/generate",
+    "method": "POST",
+    "data": {
+      "model": "llama3",
+      "prompt": "Why is the sky blue?"
+    }
+  },
+  "chat": {
+    "url": "http://localhost:11434/api/chat",
+    "method": "POST",
+    "data": {
+      "model": "llama3",
+      "messages": [
+        { "role": "user", "content": "why is the sky blue?" }
+      ]
+    }
+  }
+}

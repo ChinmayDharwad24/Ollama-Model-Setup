@@ -1,0 +1,21 @@
+{
+    "generate": {
+      "url": "http://localhost:11434/api/generate",
+      "method": "POST",
+      "data": {
+        "model": "gemma:2B",
+        "prompt": "Why is the sky blue?"
+      }
+    },
+    "chat": {
+      "url": "http://localhost:11434/api/chat",
+      "method": "POST",
+      "data": {
+        "model": "gemma:2B",
+        "messages": [
+          { "role": "user", "content": "why is the sky blue?" }
+        ]
+      }
+    }
+  }
+  
