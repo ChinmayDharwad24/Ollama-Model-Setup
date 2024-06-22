@@ -19,28 +19,39 @@ This repository contains instructions and scripts for setting up and running Lla
 Download the Llama 3 and Gemma 2B models using the following commands in Command Prompt:
 
 - **Llama 3 8B:**
+
   ```sh
   ollama run llama3
+  ```
 
+- **Gemma 2B:**
 
-# Gemma 2B Setup
+    ```sh
+    ollama run gemma:2b
+    ```
+    
+## Starting Llamma 3 8B Model
 
-This repository provides instructions and scripts for setting up and running the Gemma 2B model using Ollama on a Windows machine.
-
-## Running Gemma 2B Model
-
-To run the Gemma 2B model, follow these steps:
-
-### Step 1: Install Ollama
-
-Ensure that Ollama is installed on your Windows machine. If not, download the Ollama installer from the [Ollama website](https://ollama.com/download) and follow the installation instructions. Verify the installation by opening a browser and navigating to `http://localhost:11434`. You should see a confirmation message indicating that Ollama is running.
-
-### Step 2: Download Gemma 2B Model
-
-Download the Gemma 2B model using the following command in Command Prompt:
+To start the Gemma 2B model, use the provided script:
 
 ```sh
-ollama run gemma:2b
+scripts\start_llama3.bat
+```
+## Interacting with Llama3 Model via API
+
+You can interact with the Llamma3 model using curl commands:
+
+### Get a Response
+
+```sh
+curl http://localhost:11434/api/generate -d "{\"model\": \"llama3\",\"prompt\":\"Why is the sky blue?\"}"
+```
+
+### Chat
+
+```sh
+curl http://localhost:11434/api/chat -d "{\"model\": \"llama3\", \"messages\": [{ \"role\": \"user\", \"content\": \"why is the sky blue?\" }]}"
+```
 
 ## Starting Gemma 2B Model
 
@@ -48,8 +59,7 @@ To start the Gemma 2B model, use the provided script:
 
 ```sh
 scripts\start_gemma2b.bat
-
-
+```
 ## Interacting with Gemma 2B Model via API
 
 You can interact with the Gemma 2B model using curl commands:
@@ -58,17 +68,20 @@ You can interact with the Gemma 2B model using curl commands:
 
 ```sh
 curl http://localhost:11434/api/generate -d "{\"model\": \"gemma:2b\",\"prompt\":\"Why is the sky blue?\"}"
+```
 
-
-## Chat
+### Chat
 
 ```sh
 curl http://localhost:11434/api/chat -d "{\"model\": \"gemma:2b\", \"messages\": [{ \"role\": \"user\", \"content\": \"why is the sky blue?\" }]}"
-
+```
 
 ### File Descriptions
 
+- `scripts/start_llama3.bat`: Batch script to start the Llama 3 model.
 - `scripts/start_gemma2b.bat`: Batch script to start the Gemma 2B model.
+- `config/lemma_config.json`: Sample configuration file for reference.
+- `config/gemma_config.json`: Sample configuration file for reference.
 
 ### Troubleshooting
 
